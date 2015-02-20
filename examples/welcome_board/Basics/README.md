@@ -1,8 +1,10 @@
 # Basics
 
-- [Welcome to Trello!](Welcome to Trello!.md)
-- [This is a card.](This is a card..md)
-- [Click on a card to see what's behind it.](Click on a card to see what's behind it..md)
-- [You can attach pictures and files...](You can attach pictures and files....md)
-- [... any kind of hyperlink ...](... any kind of hyperlink ....md)
-- [... or checklists.](... or checklists..md)
+[Welcome Board](../README.md)
+
+- [Welcome to Trello!](Welcome_to_Trello.md)
+- [This is a card.](This_is_a_card.md)
+- [Click on a card to see what's behind it.](Click_on_a_card_to_see_whats_behind_it.md)
+- [You can attach pictures and files...](You_can_attach_pictures_and_files.md)
+- [... any kind of hyperlink ...](any_kind_of_hyperlink_.md)
+- [... or checklists.](or_checklists.md)
