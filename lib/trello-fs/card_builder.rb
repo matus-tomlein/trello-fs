@@ -33,7 +33,7 @@ module TrelloFs
 
       [
         "# #{@card.name}",
-        "(#{list_name})[../README.md]",
+        "[#{list_name}](README.md)",
         labels,
         @card.desc,
         attachments_content(attachment_paths)
