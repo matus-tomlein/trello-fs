@@ -1,6 +1,6 @@
 # ... any kind of hyperlink ...
 
-(Basics)[../README.md]
+[Basics](README.md)
 
 
 

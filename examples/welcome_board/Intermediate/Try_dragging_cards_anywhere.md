@@ -1,6 +1,6 @@
 # Try dragging cards anywhere.
 
-(Intermediate)[../README.md]
+[Intermediate](README.md)
 
 
 

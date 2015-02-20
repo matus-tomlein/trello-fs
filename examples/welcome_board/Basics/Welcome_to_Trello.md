@@ -1,6 +1,6 @@
 # Welcome to Trello!
 
-(Basics)[../README.md]
+[Basics](README.md)
 
 
 

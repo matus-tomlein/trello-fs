@@ -1,6 +1,6 @@
 # Want updates on new features?
 
-(Advanced)[../README.md]
+[Advanced](README.md)
 
 
 

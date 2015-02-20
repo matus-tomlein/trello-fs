@@ -1,6 +1,6 @@
 # Finished with a card? Archive it.
 
-(Intermediate)[../README.md]
+[Intermediate](README.md)
 
 
 

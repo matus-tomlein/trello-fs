@@ -1,6 +1,6 @@
 # Want tips, usage examples, or API info?
 
-(Advanced)[../README.md]
+[Advanced](README.md)
 
 
 

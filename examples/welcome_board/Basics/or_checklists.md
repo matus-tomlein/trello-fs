@@ -1,6 +1,6 @@
 # ... or checklists.
 
-(Basics)[../README.md]
+[Basics](README.md)
 
 
 

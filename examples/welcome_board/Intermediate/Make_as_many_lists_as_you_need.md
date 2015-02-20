@@ -1,6 +1,6 @@
 # Make as many lists as you need!
 
-(Intermediate)[../README.md]
+[Intermediate](README.md)
 
 
 

@@ -1,6 +1,6 @@
 # Use as many boards as you want!
 
-(Advanced)[../README.md]
+[Advanced](README.md)
 
 
 

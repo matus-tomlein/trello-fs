@@ -1,6 +1,6 @@
 # Click on a card to see what's behind it.
 
-(Basics)[../README.md]
+[Basics](README.md)
 
 
 

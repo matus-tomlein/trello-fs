@@ -1,6 +1,6 @@
 # You can attach pictures and files...
 
-(Basics)[../README.md]
+[Basics](README.md)
 
 
 

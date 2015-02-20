@@ -1,6 +1,6 @@
 # Want to use keyboard shortcuts? We have them!
 
-(Advanced)[../README.md]
+[Advanced](README.md)
 
 
 

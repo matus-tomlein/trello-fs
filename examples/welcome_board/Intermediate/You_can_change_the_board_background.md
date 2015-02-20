@@ -1,6 +1,6 @@
 # You can change the board background.
 
-(Intermediate)[../README.md]
+[Intermediate](README.md)
 
 
 

@@ -1,6 +1,6 @@
 # Get the apps for iOS, Android, and Windows 8!
 
-(Advanced)[../README.md]
+[Advanced](README.md)
 
 
 
