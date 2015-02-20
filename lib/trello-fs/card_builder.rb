@@ -28,10 +28,16 @@ module TrelloFs
     end
 
     def content(attachment_paths = [])
-      labels = @card.labels.map {|lbl| lbl.name}.join(' ')
+      labels = @card.labels.map {|lbl| "`#{lbl.name}`"}.join(' ')
       list_name = @list_builder.list_name
 
-      "# #{@card.name}\n\n#{list_name}  \n#{labels}\n\n#{@card.desc}#{attachments_content(attachment_paths)}"
+      [
+        "# #{@card.name}",
+        "(#{list_name})[../README.md]",
+        labels,
+        @card.desc,
+        attachments_content(attachment_paths)
+      ].join("\n\n")
     end
 
     def attachments_content(attachment_paths = [])
@@ -47,6 +53,7 @@ module TrelloFs
           link
         end
       end.join("  \n")
+
       "\n\n## Attachments\n\n#{links}"
     end
 

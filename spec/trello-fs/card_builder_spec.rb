@@ -44,7 +44,7 @@ describe TrelloFs::CardBuilder do
 
   describe '#path' do
     it 'returns the correct path' do
-      expected_path = File.join(TestRepository.path, 'List Name/Card Name.md')
+      expected_path = File.join(TestRepository.path, 'List_Name/Card_Name.md')
       expect(subject.path).to eq expected_path
     end
   end

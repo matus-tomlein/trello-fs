@@ -20,8 +20,7 @@ describe TrelloFs::AttachmentBuilder do
   describe '#path' do
     subject { attachment_builder.path }
 
-    it { should include 'Card Name' }
-    it { should include '1' }
+    it { should include 'Card_Name' }
     it { should include 'Attachment Name' }
   end
 

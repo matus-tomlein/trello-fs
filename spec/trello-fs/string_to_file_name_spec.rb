@@ -13,7 +13,7 @@ describe TrelloFs::StringToFileName do
     end
 
     it 'replaces slashes with dashes' do
-      expect(subject.convert('a file/path')).to eq 'a file-path'
+      expect(subject.convert('a file/path')).to eq 'a_filepath'
     end
   end
 end

@@ -22,7 +22,7 @@ describe TrelloFs::BoardBuilder do
   context '#readme_content' do
     subject { board_builder.readme_content }
 
-    it { should include '(List Name/README.md' }
-    it { should include '(List Name/Card 1.md' }
+    it { should include '(List_Name/README.md' }
+    it { should include '(List_Name/Card_1.md' }
   end
 end

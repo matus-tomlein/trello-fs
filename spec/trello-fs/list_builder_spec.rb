@@ -26,7 +26,7 @@ describe TrelloFs::ListBuilder do
     subject { list_builder.readme_content }
 
     it { should include 'List Name' }
-    it { should include '(Card 1.md' }
-    it { should include '(Card 2.md' }
+    it { should include '(Card_1.md' }
+    it { should include '(Card_2.md' }
   end
 end

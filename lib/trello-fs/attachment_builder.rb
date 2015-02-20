@@ -7,6 +7,8 @@ module TrelloFs
     def initialize(card_builder, attachment)
       @card_builder = card_builder
       @attachment = attachment
+
+      @card_builder.repository.new_attachment path
     end
 
     def build
@@ -42,7 +44,7 @@ module TrelloFs
     end
 
     def file_name
-      StringToFileName.convert("#{@attachment.id}-#{@attachment.name}")
+      @attachment.name
     end
 
     def already_downloaded?

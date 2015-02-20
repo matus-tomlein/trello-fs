@@ -24,14 +24,18 @@ module TrelloFs
     end
 
     def readme_content
-      "# #{list_name}\n\n#{content}"
+      [
+        "# #{list_name}",
+        "[#{board_name}](../README.md)",
+        content
+      ].join("\n\n")
     end
 
     def content(full_path = false)
       @list.cards.map do |card|
         cb = CardBuilder.new(self, card)
         card_path = cb.file_name
-        card_path = File.join(list_name, card_path) if full_path
+        card_path = File.join(file_name, card_path) if full_path
 
         "- [#{cb.card_name}](#{card_path})"
       end.join("\n")
@@ -51,6 +55,10 @@ module TrelloFs
 
     def list_name
       @list.name
+    end
+
+    def board_name
+      @board_builder.board_name
     end
 
     def repository

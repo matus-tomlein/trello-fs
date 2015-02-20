@@ -23,16 +23,26 @@ module TrelloFs
     end
 
     def readme_content
-      board.lists.map do |list|
-        list_builder = ListBuilder.new(self, list)
-        list_link = "[#{list_builder.list_name}](#{list_builder.file_name}/README.md)"
+      [
+        "# #{board_name}",
+        board.lists.map do |list|
+          list_builder = ListBuilder.new(self, list)
+          list_link = "[#{list_builder.list_name}](#{list_builder.file_name}/README.md)"
 
-        "## #{list_link}\n\n#{list_builder.content(true)}"
-      end.join("\n\n")
+          [
+            "## #{list_link}",
+            list_builder.content(true)
+          ].join("\n\n")
+        end.join("\n\n")
+      ].join("\n\n")
     end
 
     def path
       @repository.path
+    end
+
+    def board_name
+      @board.name
     end
   end
 end

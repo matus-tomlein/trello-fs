@@ -4,10 +4,11 @@ module TrelloFs
   class Repository
     attr_reader :config
 
-    def initialize(config)
+    def initialize(config, builder = nil)
       raise 'Wrong arguments' unless has_required_configuration?(config)
 
       @config = config
+      @builder = builder
       configure_api
     end
 
@@ -24,6 +25,10 @@ module TrelloFs
         config.developer_public_key = @config[:developer_public_key]
         config.member_token = @config[:member_token]
       end
+    end
+
+    def new_attachment(path)
+      @builder.new_attachment path if @builder
     end
 
     private
