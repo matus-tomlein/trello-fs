@@ -1,25 +1,8 @@
-TrelloFs
-========
+# [TrelloFs Installation](https://trello.com/c/Y2KkUY9R/1-trellofs-installation)
 
-Dumps the contents of a Trello board into a folder structure.
-The generated files can be then pushed to Github or a Bitbucket Wiki.
+[TrelloFs Demo Board](../README.md) > [A List of Cards](README.md)
 
-# Example
-
-See the [Demo Board](examples/demo_board/README.md), which was generated
-from this Trello board:
-[https://trello.com/b/23HXX6Gr/trellofs-demo-board](https://trello.com/b/23HXX6Gr/trellofs-demo-board)
-
-# Features
-
-- compatible with Github and Bitbucket Wiki
-- supports attachments
-- shows image attachments directly in the card view
-- label files that contain references to cards with the labels
-- supports updating the repository
-- downloads the same attachments only once
-
-# Installation
+[`readme`](../Labels/readme.md)
 
 1. Install the gem
 
@@ -50,3 +33,5 @@ from this Trello board:
 4. Run `ruby NAME_OF_YOUR_FILE.rb`
 5. Integrate with a CRON job that will run the script and push the changes to
    Github (or don't, I don't care)
+
+
