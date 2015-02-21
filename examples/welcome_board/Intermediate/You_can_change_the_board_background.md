@@ -1,8 +1,6 @@
-# You can change the board background.
+# [You can change the board background.](https://trello.com/c/lxDp5eEi/19-you-can-change-the-board-background)
 
-[Welcome Board](../README.md)
-
-[Intermediate](README.md)
+[Welcome Board](../README.md) > [Intermediate](README.md)
 
 
 

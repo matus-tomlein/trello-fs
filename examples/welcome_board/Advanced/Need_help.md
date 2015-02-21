@@ -1,8 +1,6 @@
-# Need help?
+# [Need help?](https://trello.com/c/FKdMs5cb/16-need-help)
 
-[Welcome Board](../README.md)
-
-[Advanced](README.md)
+[Welcome Board](../README.md) > [Advanced](README.md)
 
 
 

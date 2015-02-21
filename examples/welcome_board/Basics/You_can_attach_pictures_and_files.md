@@ -1,8 +1,6 @@
-# You can attach pictures and files...
+# [You can attach pictures and files...](https://trello.com/c/kXPi0va2/4-you-can-attach-pictures-and-files)
 
-[Welcome Board](../README.md)
-
-[Basics](README.md)
+[Welcome Board](../README.md) > [Basics](README.md)
 
 
 

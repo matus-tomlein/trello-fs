@@ -1,8 +1,6 @@
-# Want updates on new features?
+# [Want updates on new features?](https://trello.com/c/CYNb1cbF/15-want-updates-on-new-features)
 
-[Welcome Board](../README.md)
-
-[Advanced](README.md)
+[Welcome Board](../README.md) > [Advanced](README.md)
 
 
 

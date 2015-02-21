@@ -1,8 +1,6 @@
-# Want tips, usage examples, or API info?
+# [Want tips, usage examples, or API info?](https://trello.com/c/d18dplPl/17-want-tips-usage-examples-or-api-info)
 
-[Welcome Board](../README.md)
-
-[Advanced](README.md)
+[Welcome Board](../README.md) > [Advanced](README.md)
 
 
 
