@@ -24,7 +24,7 @@ module TrelloFs
 
     def readme_content
       [
-        "# [#{board_name}](../README.md)",
+        "# #{board_name}",
         board.lists.map do |list|
           list_builder = ListBuilder.new(self, list)
           list_link = "[#{list_builder.list_name}](#{list_builder.file_name}/README.md)"

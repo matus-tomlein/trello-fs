@@ -7,8 +7,6 @@ module TrelloFs
     def initialize(card_builder, attachment)
       @card_builder = card_builder
       @attachment = attachment
-
-      @card_builder.repository.new_attachment path
     end
 
     def build

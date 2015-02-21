@@ -1,5 +1,3 @@
-require 'trello'
-
 module TrelloFs
   class Repository
     attr_reader :config
@@ -9,7 +7,6 @@ module TrelloFs
 
       @config = config
       @builder = builder
-      configure_api
     end
 
     def path
@@ -20,15 +17,12 @@ module TrelloFs
       @config[:board_id]
     end
 
-    def configure_api
-      Trello.configure do |config|
-        config.developer_public_key = @config[:developer_public_key]
-        config.member_token = @config[:member_token]
-      end
+    def developer_public_key
+      config[:developer_public_key]
     end
 
-    def new_attachment(path)
-      @builder.new_attachment path if @builder
+    def member_token
+      config[:member_token]
     end
 
     private

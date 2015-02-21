@@ -1,22 +1,33 @@
 require 'fileutils'
+require 'set'
 
 module TrelloFs
   class AttachmentCleaner
-    def initialize(repository)
+    def initialize(repository, board)
       @repository = repository
-      @attachments = []
+      @board = board
     end
 
-    def new_attachment(path)
-      @attachments << path
+    def set_of_attachment_paths
+      @board.attachments.map do |attachment|
+        AttachmentBuilder.new(
+          CardBuilder.new(
+            ListBuilder.new(
+              BoardBuilder.new(@repository, @board),
+              attachment.card.list
+            ), attachment.card
+          ), attachment).path
+      end.to_set
     end
 
     def remove_old_attachments
+      new_attachments = set_of_attachment_paths
+
       Dir.
         glob(File.join(@repository.path, "Attachments/**/*")).
         reject {|fn| File.directory?(fn) }.
         each do |file|
-          next if @attachments.include? file
+          next if new_attachments.include? file
           FileUtils.rm(file)
 
           # remove parent dir if empty

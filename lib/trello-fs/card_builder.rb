@@ -23,12 +23,16 @@ module TrelloFs
       File.join(@list_builder.path, file_name)
     end
 
+    def relative_path
+      File.join(@list_builder.file_name, file_name)
+    end
+
     def file_name
       "#{StringToFileName.convert(@card.name)}.md"
     end
 
     def content(attachment_paths = [])
-      labels = @card.labels.map {|lbl| "`#{lbl.name}`"}.join(' ')
+      labels = card_labels.map {|lbl| "`#{lbl.name}`"}.sort.join(' ')
       list_name = @list_builder.list_name
 
       [
@@ -63,6 +67,10 @@ module TrelloFs
 
     def repository
       @list_builder.repository
+    end
+
+    def card_labels
+      @card_labels ||= @card.labels
     end
   end
 end
