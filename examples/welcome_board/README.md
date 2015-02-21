@@ -1,6 +1,6 @@
 # [Welcome Board](https://trello.com/b/bkskcUIO/welcome-board)
 
-[`no name`](Labels/no_name.md)     [`red one`](Labels/red_one.md)
+ [`no name`](Labels/no_name.md)    [`red one`](Labels/red_one.md)
 
 ## [Basics](Basics/README.md)
 

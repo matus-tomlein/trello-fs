@@ -23,22 +23,22 @@ from the Trello Welcome Board:
 
 1. Install the gem
 
-```
-gem install trello-fs
-```
+  ```
+  gem install trello-fs
+  ```
 
 2. Create a file like this one:
 
-```
-require 'trello-fs'
+  ```
+  require 'trello-fs'
 
-TrelloFs.build({
-  path: 'PATH_TO_THE_TARGET_FOLDER',
-  developer_public_key: 'DEVELOPER_PUBLIC_KEY',
-  member_token: 'MEMBER_TOKEN',
-  board_id: 'BOARD_ID'
-})
-```
+  TrelloFs.build({
+    path: 'PATH_TO_THE_TARGET_FOLDER',
+    developer_public_key: 'DEVELOPER_PUBLIC_KEY',
+    member_token: 'MEMBER_TOKEN',
+    board_id: 'BOARD_ID'
+  })
+  ```
 
 3. Replace the placeholder keys in the file above
 
