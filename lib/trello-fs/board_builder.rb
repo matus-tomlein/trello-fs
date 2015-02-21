@@ -25,7 +25,7 @@ module TrelloFs
 
     def readme_content
       [
-        "# #{board_name}",
+        "# [#{board_name}](#{@board.url})",
         labels_content,
         board.lists.map do |list|
           list_builder = ListBuilder.new(self, list)

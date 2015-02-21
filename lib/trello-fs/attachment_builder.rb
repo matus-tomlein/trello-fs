@@ -42,7 +42,7 @@ module TrelloFs
     end
 
     def file_name
-      @attachment.name
+      @attachment.name.gsub(/ /, '_')
     end
 
     def already_downloaded?

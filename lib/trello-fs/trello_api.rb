@@ -13,7 +13,10 @@ module TrelloFs
 
     def new_board
       json = download_board_json
-      board = OpenStruct.new name: json['name'], desc: json['desc'], id: json['id']
+      board = OpenStruct.new(name: json['name'],
+                             desc: json['desc'],
+                             id: json['id'],
+                             url: json['url'])
       labels, lists = {}, {}
       board.attachments = []
 
@@ -35,6 +38,7 @@ module TrelloFs
         c = OpenStruct.new(id: card['id'],
                            name: card['name'],
                            desc: card['desc'],
+                           url: card['url'],
                            list: list)
         list.cards << c
 

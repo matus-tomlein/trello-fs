@@ -32,14 +32,19 @@ module TrelloFs
     end
 
     def content(attachment_paths = [])
-      labels = card_labels.map {|lbl| "`#{lbl.name}`"}.sort.join(' ')
+      labels = card_labels.map do |lbl|
+        label_builder = LabelBuilder.new(LabelsBuilder.new(repository, board), lbl)
+        "[`#{label_builder.label_name}`](../#{label_builder.relative_path})"
+      end.sort.join(' ')
       list_name = @list_builder.list_name
       board_name = @list_builder.board_name
 
       [
-        "# #{@card.name}",
-        "[#{board_name}](../README.md)",
-        "[#{list_name}](README.md)",
+        "# [#{card_name}](#{@card.url})",
+        [
+          "[#{board_name}](../README.md)",
+          "[#{list_name}](README.md)"
+        ].join(' > '),
         labels,
         @card.desc,
         attachments_content(attachment_paths)
@@ -73,6 +78,10 @@ module TrelloFs
 
     def card_labels
       @card_labels ||= @card.labels
+    end
+
+    def board
+      @list_builder.board_builder.board
     end
   end
 end
