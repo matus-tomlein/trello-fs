@@ -1,6 +1,6 @@
 # Welcome Board
 
-`[no name](Labels/no_name.md)`     `[red one](Labels/red_one.md)`
+[`no name`](Labels/no_name.md)     [`red one`](Labels/red_one.md)
 
 ## [Basics](Basics/README.md)
 
