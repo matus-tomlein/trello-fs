@@ -42,8 +42,9 @@ module TrelloFs
     def labels_content
       return '' unless @board.labels && @board.labels.any?
 
-      @board.labels.sort {|a, b| a.name <=> b.name }.map do |label|
-        next unless label.cards.any?
+      @board.labels.sort {|a, b| a.name <=> b.name }.
+        select {|lbl| lbl.cards.any? }.
+        map do |label|
         label_builder = LabelBuilder.new(LabelsBuilder.new(@repository, @board), label)
         "[`#{label_builder.label_name}`](#{label_builder.relative_path})"
       end.join(' ')
