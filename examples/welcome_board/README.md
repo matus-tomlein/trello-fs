@@ -1,4 +1,4 @@
-# [Welcome Board](../README.md)
+# Welcome Board
 
 ## [Basics](Basics/README.md)
 
