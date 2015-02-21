@@ -1,5 +1,7 @@
 # Get the apps for iOS, Android, and Windows 8!
 
+[Welcome Board](../README.md)
+
 [Advanced](README.md)
 
 

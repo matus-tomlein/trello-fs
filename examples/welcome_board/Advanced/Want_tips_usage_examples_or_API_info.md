@@ -1,5 +1,7 @@
 # Want tips, usage examples, or API info?
 
+[Welcome Board](../README.md)
+
 [Advanced](README.md)
 
 

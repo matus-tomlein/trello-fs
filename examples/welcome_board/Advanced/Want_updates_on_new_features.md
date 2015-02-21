@@ -1,5 +1,7 @@
 # Want updates on new features?
 
+[Welcome Board](../README.md)
+
 [Advanced](README.md)
 
 

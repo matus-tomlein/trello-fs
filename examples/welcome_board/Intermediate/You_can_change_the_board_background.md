@@ -1,5 +1,7 @@
 # You can change the board background.
 
+[Welcome Board](../README.md)
+
 [Intermediate](README.md)
 
 

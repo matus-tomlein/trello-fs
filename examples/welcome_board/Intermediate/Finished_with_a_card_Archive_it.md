@@ -1,5 +1,7 @@
 # Finished with a card? Archive it.
 
+[Welcome Board](../README.md)
+
 [Intermediate](README.md)
 
 

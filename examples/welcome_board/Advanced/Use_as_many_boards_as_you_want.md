@@ -1,5 +1,7 @@
 # Use as many boards as you want!
 
+[Welcome Board](../README.md)
+
 [Advanced](README.md)
 
 
