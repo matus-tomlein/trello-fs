@@ -34,9 +34,11 @@ module TrelloFs
     def content(attachment_paths = [])
       labels = card_labels.map {|lbl| "`#{lbl.name}`"}.sort.join(' ')
       list_name = @list_builder.list_name
+      board_name = @list_builder.board_name
 
       [
         "# #{@card.name}",
+        "[#{board_name}](../README.md)",
         "[#{list_name}](README.md)",
         labels,
         @card.desc,

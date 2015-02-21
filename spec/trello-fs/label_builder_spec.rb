@@ -2,20 +2,23 @@ require 'spec_helper'
 
 describe TrelloFs::LabelBuilder do
 
+  let(:board) { OpenStruct.new(name: 'Board Name') }
   let(:label) do
     cards = [
       OpenStruct.new(
         name: 'Card 1',
         list: OpenStruct.new(
           name: 'List Name',
-          board: OpenStruct.new(name: 'Board Name')
+          board: board
         )
       )
     ]
     OpenStruct.new name: 'Label Name', cards: cards
   end
 
-  let(:builder) { TrelloFs::LabelBuilder.new(TestRepository.new, label) }
+  let(:builder) { TrelloFs::LabelBuilder.new(
+    TrelloFs::LabelsBuilder.new(TestRepository.new, board),
+    label) }
 
   describe '#path' do
     subject { builder.path }

@@ -1,7 +1,9 @@
 module TrelloFs
   class LabelBuilder
-    def initialize(repository, label)
-      @repository = repository
+    def initialize(labels_builder, label)
+      @labels_builder = labels_builder
+      @repository = @labels_builder.repository
+      @board = @labels_builder.board
       @label = label
     end
 
@@ -32,6 +34,7 @@ module TrelloFs
     def content
       [
         "# `#{label_name}`",
+        "[#{@board.name}](../README.md)",
         card_links
       ].join("\n\n")
     end

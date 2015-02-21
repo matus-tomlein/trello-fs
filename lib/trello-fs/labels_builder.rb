@@ -1,5 +1,7 @@
 module TrelloFs
   class LabelsBuilder
+    attr_reader :repository, :board
+
     def initialize(repository, board)
       @repository = repository
       @board = board
@@ -7,7 +9,7 @@ module TrelloFs
 
     def build
       @board.labels.each do |label|
-        LabelBuilder.new(@repository, label).build
+        LabelBuilder.new(self, label).build
       end
     end
   end
