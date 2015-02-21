@@ -45,7 +45,7 @@ module TrelloFs
       @board.labels.sort {|a, b| a.name <=> b.name }.map do |label|
         next unless label.cards.any?
         label_builder = LabelBuilder.new(LabelsBuilder.new(@repository, @board), label)
-        "`[#{label_builder.label_name}](#{label_builder.relative_path})`"
+        "[`#{label_builder.label_name}`](#{label_builder.relative_path})"
       end.join(' ')
     end
 
