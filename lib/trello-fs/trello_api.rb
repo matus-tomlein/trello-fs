@@ -24,7 +24,10 @@ module TrelloFs
       end
 
       json['lists'].each do |list|
-        lists[list['id']] = OpenStruct.new name: list['name'], id: list['id'], cards: []
+        lists[list['id']] = OpenStruct.new(name: list['name'],
+                                           id: list['id'],
+                                           board: board,
+                                           cards: [])
       end
 
       cards = json['cards'].map do |card|
@@ -59,11 +62,11 @@ module TrelloFs
           a
         end
 
-        board.labels = labels.values
-        board.lists = lists.values
-
         c
       end
+
+      board.labels = labels.values
+      board.lists = lists.values
 
       board
     end
