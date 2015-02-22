@@ -37,8 +37,21 @@ module TrelloFs
         card_path = cb.file_name
         card_path = File.join(file_name, card_path) if full_path
 
-        "- [#{cb.card_name}](#{card_path})"
+        "- [#{cb.card_name}](#{card_path})#{card_labels(card)}"
       end.join("\n")
+    end
+
+    def card_labels(card)
+      labels = card.labels.sort {|a, b| a.name <=> b.name }.
+        map do |label|
+        "`#{label.name}`"
+      end
+
+      if labels.any?
+        ' ' + labels.join(' ')
+      else
+        ''
+      end
     end
 
     def path
