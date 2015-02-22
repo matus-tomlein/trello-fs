@@ -5,7 +5,7 @@ require 'trello-fs/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "trello-fs"
-  spec.version       = Goulash::VERSION
+  spec.version       = TrelloFs::VERSION
   spec.authors       = ["Matúš Tomlein"]
   spec.email         = ["matus@tomlein.org"]
   spec.summary       = %q{A utility for archiving Trello boards into Git repositories.}
