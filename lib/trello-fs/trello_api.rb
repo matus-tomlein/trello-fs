@@ -33,7 +33,9 @@ module TrelloFs
                                            cards: [])
       end
 
-      cards = json['cards'].map do |card|
+      cards = json['cards'].
+        select {|card| lists[card['idList']] }.
+        map do |card|
         list = lists[card['idList']]
         c = OpenStruct.new(id: card['id'],
                            name: card['name'],
@@ -76,7 +78,7 @@ module TrelloFs
     end
 
     def download_board_json
-      url = "https://api.trello.com/1/boards/#{@repository.board_id}?key=#{@repository.developer_public_key}&token=#{@repository.member_token}&cards=all&lists=all&labels=all&card_checklists=all&card_attachments=true&organization=true"
+      url = "https://api.trello.com/1/boards/#{@repository.board_id}?key=#{@repository.developer_public_key}&token=#{@repository.member_token}&cards=open&lists=open&labels=all&card_checklists=all&card_attachments=true&organization=true&labels_limit=999"
       JSON.parse(open(url).read)
     end
   end

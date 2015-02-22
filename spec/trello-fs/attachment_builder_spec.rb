@@ -21,7 +21,7 @@ describe TrelloFs::AttachmentBuilder do
     subject { attachment_builder.path }
 
     it { should include 'Card_Name' }
-    it { should include 'Attachment Name' }
+    it { should include 'Attachment_Name' }
   end
 
   describe '#already_downloaded?' do
