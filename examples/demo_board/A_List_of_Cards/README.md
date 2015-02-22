@@ -2,5 +2,5 @@
 
 [TrelloFs Demo Board](../README.md)
 
-- [TrelloFs Installation](TrelloFs_Installation.md)
-- [TrelloFs Features](TrelloFs_Features.md)
+- [TrelloFs Installation](TrelloFs_Installation.md) `readme`
+- [TrelloFs Features](TrelloFs_Features.md) `readme`
