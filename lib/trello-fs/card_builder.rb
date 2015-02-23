@@ -58,7 +58,7 @@ module TrelloFs
         name = path.split('/').last
         path = "../#{path}"
         link = "[#{name}](#{path})"
-        if path.end_with?('.png') || path.end_with?('.jpg') || path.end_with?('gif')
+        if path.end_with?('.png') || path.end_with?('.jpg') || path.end_with?('gif') || path.end_with?('.jpeg')
           "!#{link}"
         else
           link
