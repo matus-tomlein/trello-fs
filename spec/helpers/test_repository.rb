@@ -6,6 +6,8 @@ class TestRepository < TrelloFs::Repository
       path: TestRepository.path,
       developer_public_key: '',
       member_token: '',
+      title: '',
+      description: '',
       board_ids: ['']
     })
   end

@@ -28,12 +28,21 @@ module TrelloFs
       config[:member_token]
     end
 
+    def title
+      config[:title]
+    end
+
+    def description
+      config[:description]
+    end
+
     private
 
     def has_required_configuration?(config)
       config.has_key?(:path) &&
         config.has_key?(:board_ids) &&
         config.has_key?(:developer_public_key) &&
+        config.has_key?(:title) &&
         config.has_key?(:member_token)
     end
   end

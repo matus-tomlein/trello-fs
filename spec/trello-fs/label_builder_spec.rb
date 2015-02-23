@@ -16,9 +16,7 @@ describe TrelloFs::LabelBuilder do
     OpenStruct.new name: 'Label Name', cards: cards
   end
 
-  let(:builder) { TrelloFs::LabelBuilder.new(
-    TrelloFs::LabelsBuilder.new(TestRepository.new, board),
-    label) }
+  let(:builder) { TrelloFs::LabelBuilder.new(TestRepository.new, label) }
 
   describe '#path' do
     subject { builder.path }

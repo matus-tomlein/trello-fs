@@ -28,9 +28,13 @@ module TrelloFs
 
       board.organization_name = json['organization']['displayName'] if json['organization']
 
-      board.labels = json['labels'].map do |label|
-        @repository.labels[label['name']] ||= OpenStruct.new name: label['name'], id: label['id'], cards: []
-      end
+      board.labels = json['labels'].
+        select {|lbl| !lbl['name'].empty? }.
+        map do |label|
+          @repository.labels[label['name']] ||= OpenStruct.new(name: label['name'],
+                                                               id: label['id'],
+                                                               cards: [])
+        end
 
       json['lists'].each do |list|
         lists[list['id']] = OpenStruct.new(name: list['name'],
@@ -51,7 +55,9 @@ module TrelloFs
                            list: list)
         list.cards << c
 
-        c.labels = card['labels'].map do |label|
+        c.labels = card['labels'].
+          select {|lbl| @repository.labels[lbl['name']] }.
+          map do |label|
           label = @repository.labels[label['name']]
           label.cards << c
           label

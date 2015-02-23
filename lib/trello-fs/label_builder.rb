@@ -1,9 +1,7 @@
 module TrelloFs
   class LabelBuilder
-    def initialize(labels_builder, label)
-      @labels_builder = labels_builder
-      @repository = @labels_builder.repository
-      @board = @labels_builder.board
+    def initialize(repository, label)
+      @repository = repository
       @label = label
     end
 
@@ -32,22 +30,16 @@ module TrelloFs
     end
 
     def content
-      board_builder = BoardBuilder.new(@repository, @board)
       [
         "# `#{label_name}`",
-        "[#{board_builder.board_name}](../#{board_builder.folder_name}/README.md)",
+        "[#{@repository.title}](../README.md)",
         card_links
       ].join("\n\n")
     end
 
     def card_links
       @label.cards.sort {|a,b| a.name <=> b.name }.map do |card|
-        card_builder = CardBuilder.new(
-          ListBuilder.new(
-            BoardBuilder.new(@repository, @board),
-            card.list
-          ), card
-        )
+        card_builder = CardBuilder.new_by_card(@repository, card)
         path = '../' + card_builder.relative_path
         link = "[#{card_builder.card_name}](#{path})"
           "- #{link}"
