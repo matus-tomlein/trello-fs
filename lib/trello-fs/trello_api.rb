@@ -5,25 +5,31 @@ module TrelloFs
   class TrelloApi
     def initialize(repository)
       @repository = repository
+      @boards = {}
     end
 
-    def board
-      @board ||= new_board
+    def boards
+      @repository.board_ids.map do |board_id|
+        board(board_id)
+      end
     end
 
-    def new_board
-      json = download_board_json
+    def board(board_id)
+      @boards[board_id] ||= new_board(board_id)
+    end
+
+    def new_board(board_id)
+      json = download_board_json(board_id)
       board = OpenStruct.new(name: json['name'],
                              desc: json['desc'],
                              id: json['id'],
                              url: json['url'])
-      labels, lists = {}, {}
-      board.attachments = []
+      lists = {}
 
       board.organization_name = json['organization']['displayName'] if json['organization']
 
-      json['labels'].each do |label|
-        labels[label['id']] = OpenStruct.new name: label['name'], id: label['id'], cards: []
+      board.labels = json['labels'].map do |label|
+        @repository.labels[label['name']] ||= OpenStruct.new name: label['name'], id: label['id'], cards: []
       end
 
       json['lists'].each do |list|
@@ -41,11 +47,12 @@ module TrelloFs
                            name: card['name'],
                            desc: card['desc'],
                            url: card['url'],
+                           short_link: card['shortLink'],
                            list: list)
         list.cards << c
 
-        c.labels = card['idLabels'].map do |label_id|
-          label = labels[label_id]
+        c.labels = card['labels'].map do |label|
+          label = @repository.labels[label['name']]
           label.cards << c
           label
         end
@@ -64,21 +71,21 @@ module TrelloFs
                              url: attachment['url'],
                              id: attachment['id'],
                              card: c)
-          board.attachments << a
+          @repository.attachments << a
           a
         end
 
+        @repository.cards[card['shortLink']] = card
         c
       end
 
-      board.labels = labels.values
       board.lists = lists.values
 
       board
     end
 
-    def download_board_json
-      url = "https://api.trello.com/1/boards/#{@repository.board_id}?key=#{@repository.developer_public_key}&token=#{@repository.member_token}&cards=open&lists=open&labels=all&card_checklists=all&card_attachments=true&organization=true&labels_limit=999"
+    def download_board_json(board_id)
+      url = "https://api.trello.com/1/boards/#{board_id}?key=#{@repository.developer_public_key}&token=#{@repository.member_token}&cards=open&lists=open&labels=all&card_checklists=all&card_attachments=true&organization=true&labels_limit=999"
       JSON.parse(open(url).read)
     end
   end

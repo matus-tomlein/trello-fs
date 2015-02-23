@@ -2,19 +2,20 @@ require 'spec_helper'
 
 describe TrelloFs::TrelloApi do
 
-  let(:trello_api) { TrelloFs::TrelloApi.new(TestRepository.new) }
+  let(:repository) { TestRepository.new }
+  let(:trello_api) { TrelloFs::TrelloApi.new(repository) }
 
   before :each do
     allow(trello_api).to receive(:download_board_json) { response_body }
   end
 
   describe '#board' do
-    let(:board) { trello_api.board }
+    let(:board) { trello_api.board('2174981360244') }
     it { expect(board.name).to eq 'Board Name' }
     it { expect(board.desc).to eq 'Board Description' }
     it { expect(board.organization_name).to eq 'Matus PhD' }
     it { expect(board.lists.size).to eq 1 }
-    it { expect(board.attachments.size).to eq 1 }
+    # it { expect(repository.attachments.size).to eq 1 }
 
     let(:list) { board.lists.first }
     it { expect(list.name).to eq 'List Name' }
@@ -23,7 +24,9 @@ describe TrelloFs::TrelloApi do
     let(:card) { list.cards.first }
     it { expect(card.name).to eq 'Card Name' }
     it { expect(card.desc).to eq 'Card Description' }
+    it { expect(card.short_link).to eq 'short_link' }
     it { expect(card.checklists.size).to eq 1 }
+    it { expect(card.attachments.size).to eq 1 }
 
     let(:checklist) { card.checklists.first }
     it { expect(checklist.name).to eq 'Checklist' }
@@ -75,6 +78,7 @@ describe TrelloFs::TrelloApi do
           "email" => nil,
           "idBoard" => "546da5dfc9c189f852060244",
           "idList" => "546da5e83fa3907212a5eed1",
+          "shortLink" => "short_link",
           "idMembersVoted" => [],
           "idShort" => 1,
           "idAttachmentCover" => nil,

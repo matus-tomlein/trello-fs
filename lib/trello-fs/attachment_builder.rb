@@ -4,6 +4,10 @@ module TrelloFs
   class AttachmentBuilder
     attr_reader :card_builder, :attachment
 
+    def self.new_by_attachment(repository, attachment)
+      self.new(CardBuilder.new_by_card(repository, attachment.card), attachment)
+    end
+
     def initialize(card_builder, attachment)
       @card_builder = card_builder
       @attachment = attachment
@@ -34,7 +38,7 @@ module TrelloFs
     end
 
     def folder_path
-      File.join('Attachments', StringToFileName.convert(@card_builder.card_name))
+      File.join('Attachments', board_builder.folder_name, StringToFileName.convert(@card_builder.card_name))
     end
 
     def full_folder_path
@@ -55,6 +59,10 @@ module TrelloFs
 
     def repository
       @card_builder.repository
+    end
+
+    def board_builder
+      @card_builder.board_builder
     end
   end
 end

@@ -2,10 +2,8 @@ require 'spec_helper'
 
 describe TrelloFs::BoardBuilder do
   let(:list) do
-    list = OpenStruct.new
-    list.name = 'List Name'
-    card1 = OpenStruct.new
-    card1.name = 'Card 1'
+    list = OpenStruct.new name: 'List Name'
+    card1 = OpenStruct.new labels: [], name: 'Card 1'
     list.cards = [card1]
     list
   end
@@ -22,7 +20,7 @@ describe TrelloFs::BoardBuilder do
   context '#readme_content' do
     subject { board_builder.readme_content }
 
-    it { should include '(List_Name/README.md' }
-    it { should include '(List_Name/Card_1.md' }
+    it { should include 'List_Name/README.md' }
+    it { should include 'List_Name/Card_1.md' }
   end
 end

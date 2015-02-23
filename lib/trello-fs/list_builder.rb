@@ -2,6 +2,10 @@ module TrelloFs
   class ListBuilder
     attr_reader :board_builder, :list
 
+    def self.new_by_list(repository, list)
+      self.new(BoardBuilder.new(repository, list.board), list)
+    end
+
     def initialize(board_builder, list)
       @board_builder = board_builder
       @list = list
@@ -42,10 +46,9 @@ module TrelloFs
     end
 
     def card_labels(card)
-      labels = card.labels.sort {|a, b| a.name <=> b.name }.
-        map do |label|
-        "`#{label.name}`"
-      end
+      labels = card.labels.
+        sort {|a, b| a.name <=> b.name }.
+        map {|label| "`#{label.name}`" }
 
       if labels.any?
         ' ' + labels.join(' ')
@@ -56,6 +59,10 @@ module TrelloFs
 
     def path
       File.join(@board_builder.path, file_name)
+    end
+
+    def relative_path
+      File.join(@board_builder.relative_path, file_name)
     end
 
     def file_name

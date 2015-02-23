@@ -5,8 +5,8 @@ describe TrelloFs::ListBuilder do
   let(:list) do
     list = OpenStruct.new
     list.name = 'List Name'
-    card1, card2 = OpenStruct.new, OpenStruct.new
-    card1.name, card2.name = 'Card 1', 'Card 2'
+    card1 = OpenStruct.new name: 'Card 1', labels: []
+    card2 = OpenStruct.new name: 'Card 2', labels: []
     list.cards = [card1, card2]
     list
   end

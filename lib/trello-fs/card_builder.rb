@@ -1,5 +1,11 @@
 module TrelloFs
   class CardBuilder
+    attr_reader :list_builder
+
+    def self.new_by_card(repository, card)
+      self.new(ListBuilder.new_by_list(repository, card.list), card)
+    end
+
     def initialize(list_builder, card)
       @card = card
       @list_builder = list_builder
@@ -24,7 +30,7 @@ module TrelloFs
     end
 
     def relative_path
-      File.join(@list_builder.file_name, file_name)
+      File.join(@list_builder.relative_path, file_name)
     end
 
     def file_name
@@ -56,7 +62,7 @@ module TrelloFs
 
       links = attachment_paths.map do |path|
         name = path.split('/').last
-        path = "../#{path}"
+        path = "../../#{path}"
         link = "[#{name}](#{path})"
         if path.end_with?('.png') || path.end_with?('.jpg') || path.end_with?('gif') || path.end_with?('.jpeg')
           "!#{link}"
@@ -80,8 +86,12 @@ module TrelloFs
       @card_labels ||= @card.labels
     end
 
+    def board_builder
+      @list_builder.board_builder
+    end
+
     def board
-      @list_builder.board_builder.board
+      board_builder.board
     end
   end
 end

@@ -1,7 +1,7 @@
 TrelloFs
 ========
 
-Dumps the contents of a Trello board into a folder structure.
+Dumps the contents of Trello boards into a folder structure.
 The generated files can be then pushed to Github or a Bitbucket Wiki.
 
 # Example
@@ -36,7 +36,7 @@ from this Trello board:
     path: 'PATH_TO_THE_TARGET_FOLDER',
     developer_public_key: 'DEVELOPER_PUBLIC_KEY',
     member_token: 'MEMBER_TOKEN',
-    board_id: 'BOARD_ID'
+    board_ids: ['BOARD_ID']
   })
   ```
 

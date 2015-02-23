@@ -32,9 +32,10 @@ module TrelloFs
     end
 
     def content
+      board_builder = BoardBuilder.new(@repository, @board)
       [
         "# `#{label_name}`",
-        "[#{@board.name}](../README.md)",
+        "[#{board_builder.board_name}](../#{board_builder.folder_name}/README.md)",
         card_links
       ].join("\n\n")
     end

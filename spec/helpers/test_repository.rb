@@ -5,7 +5,8 @@ class TestRepository < TrelloFs::Repository
     super({
       path: TestRepository.path,
       developer_public_key: '',
-      member_token: ''
+      member_token: '',
+      board_ids: ['']
     })
   end
 

@@ -3,20 +3,13 @@ require 'set'
 
 module TrelloFs
   class AttachmentCleaner
-    def initialize(repository, board)
+    def initialize(repository)
       @repository = repository
-      @board = board
     end
 
     def set_of_attachment_paths
-      @board.attachments.map do |attachment|
-        AttachmentBuilder.new(
-          CardBuilder.new(
-            ListBuilder.new(
-              BoardBuilder.new(@repository, @board),
-              attachment.card.list
-            ), attachment.card
-          ), attachment).path
+      @repository.attachments.map do |attachment|
+        AttachmentBuilder.new_by_attachment(@repository, attachment).path
       end.to_set
     end
 
@@ -28,6 +21,7 @@ module TrelloFs
         reject {|fn| File.directory?(fn) }.
         each do |file|
           next if new_attachments.include? file
+          puts file
           FileUtils.rm(file)
 
           # remove parent dir if empty

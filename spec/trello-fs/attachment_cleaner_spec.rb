@@ -4,24 +4,21 @@ describe TrelloFs::AttachmentCleaner do
   describe '#remove_old_attachments' do
     let(:repository) { TestRepository.new }
 
-    let(:old_attachment) { File.join(repository.path, 'Attachments/old/old_attachment.jpg') }
-    let(:new_attachment) { File.join(repository.path, 'Attachments/new/new_attachment.jpg') }
+    let(:old_attachment) { File.join(repository.path, 'Attachments/Board/old/old_attachment.jpg') }
+    let(:new_attachment) { File.join(repository.path, 'Attachments/Board/new/new_attachment.jpg') }
 
-    let(:board) do
-      OpenStruct.new(attachments: [
-        OpenStruct.new(
-          name: 'new_attachment.jpg',
-          card: OpenStruct.new(
-            name: 'new',
-            list: OpenStruct.new(name: 'l')
-          )
-        )
-      ])
-    end
+    subject { TrelloFs::AttachmentCleaner.new(repository) }
 
-    subject { TrelloFs::AttachmentCleaner.new(repository, board) }
+    let(:board) { OpenStruct.new name: 'Board' }
+    let(:list) { OpenStruct.new name: 'l', board: board }
+    let(:card) { OpenStruct.new name: 'new', list: list }
 
     before :each do
+      repository.attachments << OpenStruct.new(
+        name: 'new_attachment.jpg',
+        card: card
+      )
+
       [new_attachment, old_attachment].each do |attachment|
         FileUtils.mkpath(File.dirname(attachment))
         File.open(attachment, 'w') {|f| f.write('a') }

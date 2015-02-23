@@ -29,7 +29,7 @@ module TrelloFs
         labels_content,
         board.lists.map do |list|
           list_builder = ListBuilder.new(self, list)
-          list_link = "[#{list_builder.list_name}](#{list_builder.file_name}/README.md)"
+          list_link = "[#{list_builder.list_name}](/#{list_builder.file_name}/README.md)"
 
           [
             "## #{list_link}",
@@ -46,13 +46,19 @@ module TrelloFs
         select {|lbl| lbl.cards.any? }.
         map do |label|
         label_builder = LabelBuilder.new(LabelsBuilder.new(@repository, @board), label)
-        "[`#{label_builder.label_name}`](#{label_builder.relative_path})"
+        "[`#{label_builder.label_name}`](../#{label_builder.relative_path})"
       end.join(' ')
     end
 
     def path
-      @repository.path
+      File.join(@repository.path, folder_name)
     end
+
+    def folder_name
+      StringToFileName.convert(board_name)
+    end
+
+    alias_method :relative_path, :folder_name
 
     def board_name
       @board.name
