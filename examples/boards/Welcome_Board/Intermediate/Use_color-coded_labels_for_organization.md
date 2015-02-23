@@ -2,7 +2,7 @@
 
 [Welcome Board](../README.md) > [Intermediate](README.md)
 
-[`no name`](../Labels/no_name.md) [`red one`](../Labels/red_one.md)
+[`red one`](../Labels/red_one.md)
 
 
 
