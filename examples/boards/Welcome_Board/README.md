@@ -1,8 +1,8 @@
 # [Welcome Board](https://trello.com/b/bkskcUIO/welcome-board)
 
-[`no name`](Labels/no_name.md) [`red one`](Labels/red_one.md)
+[`no name`](../Labels/no_name.md) [`no name`](../Labels/no_name.md) [`no name`](../Labels/no_name.md) [`no name`](../Labels/no_name.md) [`no name`](../Labels/no_name.md) [`red one`](../Labels/red_one.md)
 
-## [Basics](Basics/README.md)
+## [Basics](../Welcome_Board/Basics/README.md)
 
 - [Welcome to Trello!](Basics/Welcome_to_Trello.md)
 - [This is a card.](Basics/This_is_a_card.md)
@@ -11,7 +11,7 @@
 - [... any kind of hyperlink ...](Basics/any_kind_of_hyperlink_.md)
 - [... or checklists.](Basics/or_checklists.md)
 
-## [Intermediate](Intermediate/README.md)
+## [Intermediate](../Welcome_Board/Intermediate/README.md)
 
 - [Invite your team to this board using the Add Members button](Intermediate/Invite_your_team_to_this_board_using_the_Add_Members_button.md)
 - [Drag people onto a card to indicate that they're responsible for it.](Intermediate/Drag_people_onto_a_card_to_indicate_that_theyre_responsible_for_it.md)
@@ -21,7 +21,7 @@
 - [Try dragging cards anywhere.](Intermediate/Try_dragging_cards_anywhere.md)
 - [Finished with a card? Archive it.](Intermediate/Finished_with_a_card_Archive_it.md)
 
-## [Advanced](Advanced/README.md)
+## [Advanced](../Welcome_Board/Advanced/README.md)
 
 - [Use as many boards as you want!](Advanced/Use_as_many_boards_as_you_want.md)
 - [Want tips, usage examples, or API info?](Advanced/Want_tips_usage_examples_or_API_info.md)

@@ -10,4 +10,4 @@ This is Taco, the most famous Siberian Husky in New York City, and official spok
 
 ## Attachments
 
-![taco.png](../Attachments/You_can_attach_pictures_and_files/taco.png)
+![taco.png](../../Attachments/Welcome_Board/You_can_attach_pictures_and_files/taco.png)

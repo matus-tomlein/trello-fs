@@ -10,4 +10,4 @@ There should be an image below
 
 ## Attachments
 
-![cats-cute-cat-animal-cute-grass-photo.jpg](../Attachments/A_card_with_an_image/cats-cute-cat-animal-cute-grass-photo.jpg)
+![cats-cute-cat-animal-cute-grass-photo.jpg](../../Attachments/TrelloFs_Demo_Board/A_card_with_an_image/cats-cute-cat-animal-cute-grass-photo.jpg)
