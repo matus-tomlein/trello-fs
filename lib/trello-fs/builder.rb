@@ -57,10 +57,10 @@ module TrelloFs
           "## [#{board.name}](#{board_builder.relative_path}/README.md)",
           board.lists.map do |list|
             list_builder = ListBuilder.new(board_builder, list)
-            "- [#{list_builder.list_name}](#{list_builder.relative_path}/README.md)"
-          end
-        ]
-      end
+            "  - [#{list_builder.list_name}](#{list_builder.relative_path}/README.md)"
+          end.join("\n")
+        ].join("\n\n")
+      end.join("\n\n")
     end
 
     def trello_api_board(repository)

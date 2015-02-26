@@ -26,6 +26,7 @@ module TrelloFs
       [
         "# [#{board_name}](#{@board.url})",
         labels_content,
+        "[#{repository_name}](../README.md)",
         board.lists.map do |list|
           list_builder = ListBuilder.new(self, list)
           list_link = "[#{list_builder.list_name}](#{list_builder.file_name}/README.md)"
@@ -61,6 +62,10 @@ module TrelloFs
 
     def board_name
       @board.name
+    end
+
+    def repository_name
+      @repository.title
     end
   end
 end

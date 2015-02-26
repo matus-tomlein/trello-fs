@@ -30,7 +30,10 @@ module TrelloFs
     def readme_content
       [
         "# #{list_name}",
-        "[#{board_name}](../README.md)",
+        [
+          "[#{repository_name}](../../README.md)",
+          "[#{board_name}](../README.md)"
+        ].join(' > '),
         content
       ].join("\n\n")
     end
@@ -83,6 +86,10 @@ module TrelloFs
 
     def repository
       @board_builder.repository
+    end
+
+    def repository_name
+      repository.title
     end
   end
 end

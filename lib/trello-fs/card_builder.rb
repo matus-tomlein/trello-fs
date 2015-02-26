@@ -48,6 +48,7 @@ module TrelloFs
       [
         "# [#{card_name}](#{@card.url})",
         [
+          "[#{repository_name}](../../README.md)",
           "[#{board_name}](../README.md)",
           "[#{list_name}](README.md)"
         ].join(' > '),
@@ -92,6 +93,10 @@ module TrelloFs
 
     def board
       board_builder.board
+    end
+
+    def repository_name
+      repository.title
     end
   end
 end
