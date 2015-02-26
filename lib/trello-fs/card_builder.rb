@@ -70,7 +70,7 @@ module TrelloFs
         else
           link
         end
-      end.join("  \n")
+      end.join("\n\n")
 
       "\n\n## Attachments\n\n#{links}"
     end
