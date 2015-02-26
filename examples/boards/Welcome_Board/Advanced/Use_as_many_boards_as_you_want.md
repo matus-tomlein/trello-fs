@@ -1,6 +1,6 @@
 # [Use as many boards as you want!](https://trello.com/c/PDaBJB6d/13-use-as-many-boards-as-you-want)
 
-[Welcome Board](../README.md) > [Advanced](README.md)
+[Examples](../../README.md) > [Welcome Board](../README.md) > [Advanced](README.md)
 
 
 

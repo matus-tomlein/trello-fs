@@ -1,6 +1,6 @@
 # [Finished with a card? Archive it.](https://trello.com/c/rZubWzHc/12-finished-with-a-card-archive-it)
 
-[Welcome Board](../README.md) > [Intermediate](README.md)
+[Examples](../../README.md) > [Welcome Board](../README.md) > [Intermediate](README.md)
 
 
 

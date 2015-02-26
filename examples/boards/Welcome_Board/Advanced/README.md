@@ -1,6 +1,6 @@
 # Advanced
 
-[Welcome Board](../README.md)
+[Examples](../../README.md) > [Welcome Board](../README.md)
 
 - [Use as many boards as you want!](Use_as_many_boards_as_you_want.md)
 - [Want tips, usage examples, or API info?](Want_tips_usage_examples_or_API_info.md)
