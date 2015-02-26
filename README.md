@@ -6,9 +6,10 @@ The generated files can be then pushed to Github or a Bitbucket Wiki.
 
 # Example
 
-See the [Demo Board](examples/demo_board/README.md), which was generated
-from this Trello board:
+See the [demo boards](examples/boards/README.md), which were generated
+from these Trello boards:
 [https://trello.com/b/23HXX6Gr/trellofs-demo-board](https://trello.com/b/23HXX6Gr/trellofs-demo-board)
+[https://trello.com/b/bkskcUIO/welcome-board](https://trello.com/b/bkskcUIO/welcome-board)
 
 # Features
 
