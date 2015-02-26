@@ -53,7 +53,7 @@ module TrelloFs
           "[#{list_name}](README.md)"
         ].join(' > '),
         labels,
-        @card.desc,
+        card_description,
         attachments_content(attachment_paths)
       ].join("\n\n")
     end
@@ -77,6 +77,10 @@ module TrelloFs
 
     def card_name
       @card.name
+    end
+
+    def card_description
+      LinkReplacer.new(repository).card_description(@card)
     end
 
     def repository

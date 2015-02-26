@@ -81,7 +81,7 @@ module TrelloFs
           a
         end
 
-        @repository.cards[card['shortLink']] = card
+        @repository.cards[card['shortLink']] = c
         c
       end
 

@@ -21,7 +21,6 @@ module TrelloFs
         reject {|fn| File.directory?(fn) }.
         each do |file|
           next if new_attachments.include? file
-          puts file
           FileUtils.rm(file)
 
           # remove parent dir if empty
