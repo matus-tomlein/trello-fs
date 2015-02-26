@@ -18,6 +18,7 @@ from this Trello board:
 - label files that contain references to cards with the labels
 - supports updating the repository
 - downloads the same attachments only once
+- replaces links to cards in the exported boards with local links
 
 # Installation
 
@@ -33,6 +34,8 @@ from this Trello board:
   require 'trello-fs'
 
   TrelloFs.build({
+    title: 'Some Title',
+    description: 'Some Description',
     path: 'PATH_TO_THE_TARGET_FOLDER',
     developer_public_key: 'DEVELOPER_PUBLIC_KEY',
     member_token: 'MEMBER_TOKEN',
