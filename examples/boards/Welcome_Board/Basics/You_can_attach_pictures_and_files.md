@@ -2,7 +2,7 @@
 
 [Examples](../../README.md) > [Welcome Board](../README.md) > [Basics](README.md)
 
-[`red one`](../Labels/red_one.md)
+[`red one`](../../Labels/red_one.md)
 
 This is Taco, the most famous Siberian Husky in New York City, and official spokes-mascot for Trello. You might see him around Trello introducing new features and whatnot.
 

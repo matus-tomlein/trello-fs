@@ -2,7 +2,7 @@
 
 [Examples](../../README.md) > [TrelloFs Demo Board](../README.md) > [A List of Cards](README.md)
 
-[`readme`](../Labels/readme.md)
+[`readme`](../../Labels/readme.md)
 
 1. Install the gem
 

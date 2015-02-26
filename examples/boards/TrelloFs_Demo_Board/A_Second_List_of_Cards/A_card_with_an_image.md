@@ -2,7 +2,7 @@
 
 [Examples](../../README.md) > [TrelloFs Demo Board](../README.md) > [A Second List of Cards](README.md)
 
-[`cats`](../Labels/cats.md) [`images`](../Labels/images.md)
+[`cats`](../../Labels/cats.md) [`images`](../../Labels/images.md)
 
 There should be an image below
 
