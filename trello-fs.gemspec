@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["matus@tomlein.org"]
   spec.summary       = %q{A utility for archiving Trello boards into Git repositories.}
   spec.description   = %q{}
-  spec.homepage      = "https://github.com/matus_tomlein/trello-fs"
+  spec.homepage      = "https://github.com/matus-tomlein/trello-fs"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
