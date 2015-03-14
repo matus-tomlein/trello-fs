@@ -2,8 +2,6 @@
 
 Sample boards exported from Trello.
 
-[`cats`](Labels/cats.md) [`images`](Labels/images.md) [`puppies`](Labels/puppies.md) [`readme`](Labels/readme.md) [`red one`](Labels/red_one.md)
-
 ## [TrelloFs Demo Board](TrelloFs_Demo_Board/README.md)
 
   - [A List of Cards](TrelloFs_Demo_Board/A_List_of_Cards/README.md)
@@ -14,3 +12,5 @@ Sample boards exported from Trello.
   - [Basics](Welcome_Board/Basics/README.md)
   - [Intermediate](Welcome_Board/Intermediate/README.md)
   - [Advanced](Welcome_Board/Advanced/README.md)
+
+[`cats`](Labels/cats.md) [`images`](Labels/images.md) [`puppies`](Labels/puppies.md) [`readme`](Labels/readme.md) [`red one`](Labels/red_one.md)

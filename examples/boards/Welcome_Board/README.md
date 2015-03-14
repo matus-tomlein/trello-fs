@@ -1,7 +1,5 @@
 # [Welcome Board](https://trello.com/b/bkskcUIO/welcome-board)
 
-[`red one`](../Labels/red_one.md)
-
 [Examples](../README.md)
 
 ## [Basics](Basics/README.md)
@@ -31,3 +29,5 @@
 - [Get the apps for iOS, Android, and Windows 8!](Advanced/Get_the_apps_for_iOS_Android_and_Windows_8.md)
 - [Want updates on new features?](Advanced/Want_updates_on_new_features.md)
 - [Need help?](Advanced/Need_help.md)
+
+[`red one`](../Labels/red_one.md)
