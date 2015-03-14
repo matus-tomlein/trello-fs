@@ -34,8 +34,8 @@ module TrelloFs
       [
         "# #{repository.title}",
         repository.description,
-        labels_content(repository),
-        boards_content(repository, boards)
+        boards_content(repository, boards),
+        labels_content(repository)
       ].join("\n\n")
     end
 

@@ -25,7 +25,6 @@ module TrelloFs
     def readme_content
       [
         "# [#{board_name}](#{@board.url})",
-        labels_content,
         "[#{repository_name}](../README.md)",
         board.lists.map do |list|
           list_builder = ListBuilder.new(self, list)
@@ -35,7 +34,8 @@ module TrelloFs
             "## #{list_link}",
             list_builder.content(true)
           ].join("\n\n")
-        end.join("\n\n")
+        end.join("\n\n"),
+        labels_content
       ].join("\n\n")
     end
 
