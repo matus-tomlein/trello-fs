@@ -42,8 +42,6 @@ module TrelloFs
         label_builder = LabelBuilder.new(repository, lbl)
         "[`#{label_builder.label_name}`](../../#{label_builder.relative_path})"
       end.sort.join(' ')
-      list_name = @list_builder.list_name
-      board_name = @list_builder.board_name
 
       [
         "# [#{card_name}](#{@card.url})",
@@ -97,6 +95,14 @@ module TrelloFs
 
     def board
       board_builder.board
+    end
+
+    def board_name
+      board_builder.board_name
+    end
+
+    def list_name
+      @list_builder.list_name
     end
 
     def repository_name
