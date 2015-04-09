@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 describe TrelloFs::AttachmentBuilder do
-  let(:attachment) { OpenStruct.new(id: '1', name: 'Attachment Name') }
+  let(:attachment) { OpenStruct.new(id: '1',
+                                    name: 'Attachment Name',
+                                    url: 'trello-attachments.s3.amazonaws.com') }
   let(:card) { OpenStruct.new(name: 'Card Name', attachments: [attachment]) }
   let(:list) { OpenStruct.new(name: 'List Name', cards: [card]) }
   let(:board) { OpenStruct.new(name: 'Board') }
@@ -31,6 +33,20 @@ describe TrelloFs::AttachmentBuilder do
 
     it 'returns true after download' do
       attachment_builder.build
+      should eq true
+    end
+  end
+
+  describe '#is_trello_attachment?' do
+    subject { attachment_builder.is_trello_attachment? }
+
+    it do
+      attachment.url = 'http://not-trello.com'
+      should eq false
+    end
+
+    it do
+      attachment.url = 'https://trello-attachments.s3.amazonaws.com/fdksajfls'
       should eq true
     end
   end

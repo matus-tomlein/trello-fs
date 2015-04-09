@@ -17,7 +17,11 @@ module TrelloFs
       attachment_paths = @card.attachments.map do |attachment|
         attachment_builder = AttachmentBuilder.new(self, attachment)
         attachment_builder.build
-        attachment_builder.relative_path
+        if attachment_builder.is_trello_attachment?
+          attachment_builder.relative_path
+        else
+          attachment_builder.url
+        end
       end
 
       File.open(path, 'w') do |file|
@@ -60,8 +64,13 @@ module TrelloFs
       return '' unless attachment_paths.any?
 
       links = attachment_paths.map do |path|
-        name = path.split('/').last
-        path = "../../#{path}"
+        if is_url?(path)
+          name = path
+        else
+          name = path.split('/').last
+          path = "../../#{path}"
+        end
+
         link = "[#{name}](#{path})"
         if path.end_with?('.png') || path.end_with?('.jpg') || path.end_with?('gif') || path.end_with?('.jpeg')
           "!#{link}"
@@ -107,6 +116,12 @@ module TrelloFs
 
     def repository_name
       repository.title
+    end
+
+    private
+
+    def is_url?(path)
+      path.start_with?('http://') || path.start_with?('https://')
     end
   end
 end

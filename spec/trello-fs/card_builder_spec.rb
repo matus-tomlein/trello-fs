@@ -31,7 +31,7 @@ describe TrelloFs::CardBuilder do
   subject { card_builder }
 
   describe '#content' do
-    subject { card_builder.content(['Attachments/file.pdf', 'Attachments/picture.png']) }
+    subject { card_builder.content(['Attachments/file.pdf', 'Attachments/picture.png', 'http://url.com/file.docx']) }
 
     it { should include 'Card Name' }
     it { should include 'Card Description' }
@@ -40,6 +40,7 @@ describe TrelloFs::CardBuilder do
     it { should include 'List Name' }
     it { should include '[file.pdf' }
     it { should include '![picture.png]' }
+    it { should include '[http://url.com/file.docx](http://url.com/file.docx)' }
   end
 
   describe '#path' do

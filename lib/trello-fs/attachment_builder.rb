@@ -20,6 +20,8 @@ module TrelloFs
     end
 
     def download_and_save
+      return unless is_trello_attachment?
+
       data = download
       return unless data
 
@@ -53,8 +55,12 @@ module TrelloFs
       File.exist? path
     end
 
+    def is_trello_attachment?
+      url.include?('trello-attachments.s3.amazonaws.com')
+    end
+
     def download
-      open(@attachment.url).read
+      open(url).read
     end
 
     def repository
@@ -63,6 +69,10 @@ module TrelloFs
 
     def board_builder
       @card_builder.board_builder
+    end
+
+    def url
+      @attachment.url
     end
   end
 end
